@@ -9,10 +9,18 @@ const App = () => {
             lastName:"",
             phoneNo:""
         })
+
+    const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(personal)
+  }
+
   return (
-    <>
-    <PersonalDetails personal={personal} setPersonalDetails={setPersonal}/>
-    </>
+    <div className="container mt-3">
+        <form onSubmit={handleSubmit}>
+            <PersonalDetails personal={personal} setPersonalDetails={setPersonal}/>
+        </form>
+    </div>
   )
 }
 
