@@ -1,7 +1,7 @@
 import React from 'react'
 import { calculateYears } from '../utils/calculateYears'
 
-const ExperienceItem = ({experience,onChange}) => {
+const ExperienceItem = ({experience,onChange,onRemove}) => {
 
     const handleChange = (e) =>{
         const {name,value} = e.target;
@@ -32,7 +32,7 @@ const ExperienceItem = ({experience,onChange}) => {
                 <label>Years of Experience</label>
                 <input type="text" name="Years" value={experience.years} readOnly/>
             </div>
-            
+            <button type="button" onClick={() => onRemove(experience.id)}>Remove</button>
         </fieldset>
     </>
   )

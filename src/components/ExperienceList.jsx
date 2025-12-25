@@ -1,5 +1,6 @@
 import React from 'react'
 import ExperienceItem from './ExperienceItem'
+import {v4 as uuid} from "uuid"
 
 const ExperienceList = ({experiences,setExperiences}) => {
 
@@ -7,6 +8,11 @@ const ExperienceList = ({experiences,setExperiences}) => {
         const updatedList = experiences.map(exp=>(exp.id === id?updatedExp:exp))
         setExperiences(updatedList)
     }
+
+    const removeExperience = (id) => {
+    if (experiences.length === 1) return; // minimum one required
+    setExperiences(experiences.filter(exp => exp.id !== id));
+    };
 
     const addExperience=()=>{
         setExperiences([...experiences,{
@@ -22,7 +28,7 @@ const ExperienceList = ({experiences,setExperiences}) => {
     <>
         <h3>Professional Experience</h3>
         {experiences.map(exp=>(
-            <ExperienceItem key={exp.id} experience={exp} onChange={updateExperience}/>
+            <ExperienceItem key={exp.id} experience={exp} onChange={updateExperience} onRemove={removeExperience}/>
         ))}
         <button type="button" onClick={addExperience}>+ Add Experience</button>
     </>
