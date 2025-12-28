@@ -61,7 +61,7 @@ const App = () => {
             <PersonalDetails personal={personal} setPersonalDetails={setPersonal}/>
             <ExperienceList experiences={experiences} setExperiences={setExperiences}/>
             <div>
-            <button type="submit" className="btn btn-primary mt-3" disabled={loading}>{loading?"Submitting...":"Submit"}</button>
+            <button type="submit" className="btn btn-primary mt-3" disabled={loading}>{loading?(<><span className="spinner-border spinner-border-sm me-2"></span>Submitting...</>):("Submit")}</button>
             </div>
         </form>
     </div>
