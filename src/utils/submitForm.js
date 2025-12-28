@@ -7,7 +7,7 @@ export const submitForm = async(formData)=>{
         `${API_BASE_URL}/submit`,
         formData,
         {
-            header:{
+            headers:{
                 "content-Type":"application/json",
             },
         }

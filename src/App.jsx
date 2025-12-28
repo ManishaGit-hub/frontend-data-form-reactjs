@@ -3,8 +3,11 @@ import PersonalDetails from './components/PersonalDetails'
 import ExperienceList from './components/ExperienceList'
 import {v4 as uuid} from "uuid"
 import { submitForm } from './utils/submitForm'
+import {useNavigate} from 'react-router-dom'
+import { delay } from './utils/delay'
 
 const App = () => {
+    const navigate = useNavigate()
 
     let [personal,setPersonal] = useState({
             email:"",
@@ -22,24 +25,34 @@ const App = () => {
              years:0 
             }
         ])
+        
+        const [loading,setLoading] = useState(false);
 
     const handleSubmit = async(e) => {
-    e.preventDefault();
-   const payload={
-    personalDetails:personal,
-    professionalExperience:experiences
-   };
-   try{
-   const result = await submitForm(payload)
-   console.log("backend response:",result)
-   alert("Form submitted successfully!");
-   }
-   catch(error){
-    console.error("Error subitting form:",error);
-    alert("submission failed");
-   }
+                        e.preventDefault();
+                        setLoading(true);
+
+                        const payload={
+                                personalDetails:personal,
+                                professionalExperience:experiences
+                                        };
+                        try{
+                            const result = await submitForm(payload)
+
+                            await delay(4000)
+                            
+                            navigate('/success',{
+                                state:{referenceId:result.referenceId},
+                        })
+                    }
+                    catch(error){
+                            alert("submission failed");
+                    }
+                    finally{
+                            setLoading(false);
+                    }
   
-  }
+                }
 
   return (
     <div className="container mt-3">
@@ -48,7 +61,7 @@ const App = () => {
             <PersonalDetails personal={personal} setPersonalDetails={setPersonal}/>
             <ExperienceList experiences={experiences} setExperiences={setExperiences}/>
             <div>
-            <button type="submit" className="btn btn-primary mt-3">Submit</button>
+            <button type="submit" className="btn btn-primary mt-3" disabled={loading}>{loading?"Submitting...":"Submit"}</button>
             </div>
         </form>
     </div>
