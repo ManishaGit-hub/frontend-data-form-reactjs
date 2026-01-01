@@ -1,0 +1,36 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "26655000000013001",
+      "name": "dataSavedInCatalystDB",
+      "domain": {
+        "id": "50037313743",
+        "name": "datasavedincatalystdb-60062192979.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "60062192979",
+          "name": "Development",
+          "type": 3
+        },
+        {
+          "idx": 2,
+          "id": "50037315162",
+          "name": "Production",
+          "type": 1
+        }
+      ]
+    }
+  ]
+}

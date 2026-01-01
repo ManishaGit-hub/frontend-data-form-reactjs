@@ -1,0 +1,10 @@
+{
+  "features": {
+    "client": {
+      "source": ".",
+      "build": "dist",
+      "folder": "client"
+    }
+  }
+}
+
