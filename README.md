@@ -26,11 +26,11 @@ Zoho Creator
 
 ### Technology Stack
 
-**Frontend:** React.js (Vite)
-**Backend:** Zoho Catalyst Advanced I/O Function (Node.js runtime, JavaScript)
-**Database:** Zoho Catalyst Data Store
-**Hosting Target:** Zoho Catalyst (currently running locally. Fully prepared for deployment)
-**Integrations:** Zoho Creator
+- **Frontend:** React.js (Vite)
+- **Backend:** Zoho Catalyst Advanced I/O Function (Node.js runtime, JavaScript)
+- **Database:** Zoho Catalyst Data Store
+- **Hosting Target:** Zoho Catalyst (currently running locally. Fully prepared for deployment)
+- **Integrations:** Zoho Creator
 
 ### 3. Setup Instructions (Local)
 
@@ -63,18 +63,18 @@ catalyst serve
 
 ### 4. Deployment Details (Zoho Catalyst)
 
-**Intended Deployment**
+**Intended Deployment** :  
 Frontend to be hosted as a Catalyst web client
 Backend to be deployed as a Catalyst Advanced I/O function
 Environment variables to be configured via Catalyst console
 
-**Current Status**
+**Current Status** :  
 The application works end-to-end in the local development environment
 Deployment to Zoho Catalyst was attempted
 Due to environment configuration and OAuth-related constraints, full deployment could not be completed within the given timeline
 The codebase is structured and prepared for Catalyst deployment
 
-**Deployment Status** 
+**Deployment Status** : 
 
 Both frontend and backend are fully functional in the local development environment. Deployment to Zoho Catalyst was planned and the codebase is structured for hosting, but full deployment could not be completed due to configuration constraints.
 
