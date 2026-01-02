@@ -5,12 +5,12 @@ This project is a full-stack web application that allows external users to submi
 The primary goal of this project is to demonstrate full-stack development skills, serverless backend implementation using Zoho Catalyst, and third-party integration with Zoho Creator.
 
 #### Key Features
-Public-facing data submission form
-Dynamic, repeatable professional experience section
-Auto-calculation of years of experience
-Unique Reference ID generation for each submission
-Backend validation and persistence
-Successful integration with Zoho Creator
+1. Public-facing data submission form
+2. Dynamic, repeatable professional experience section
+3. Auto-calculation of years of experience
+4. Unique Reference ID generation for each submission
+5. Backend validation and persistence
+6. Successful integration with Zoho Creator
 
 ### 2. Architecture Overview
 
@@ -110,13 +110,13 @@ ZOHO_CLIENT_SECRET=fe25cc8dcb280056b6889c68378a9f284a2b198113
 | years            | Number     | Auto-calculated years of experience based on startDate and endDate |
 
 ### 7. Zoho Integrations
-**Zoho Creator (Implemented)**
+- **Zoho Creator (Implemented)** : 
 Data is pushed to Zoho Creator after successful persistence in Catalyst Data Store
 Integration is implemented using Zoho Creator REST APIs
 OAuth 2.0 authentication with refresh token mechanism
 Each submission results in a new record in Zoho Creator
 
-**Zoho CRM (Not Implemented)**
+- **Zoho CRM (Not Implemented)** : 
 Zoho CRM integration was planned as a bonus enhancement
 Not implemented due to time constraints
 
